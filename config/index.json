@@ -1,4 +1,4 @@
 {
-  "dbUri": "mongodb://localhost/sentieoanalytics",
+  "dbUri": "mongodb://abc:abc@ds139430.mlab.com:39430/heroku_p8g173r6",
   "jwtSecret": "a secret phrase!!"
 }
