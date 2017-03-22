@@ -60,7 +60,7 @@ class DashboardPage extends React.Component {
     xhr.setRequestHeader('Authorization', `bearer ${Auth.getToken()}`);
     xhr.responseType = 'json';
     xhr.addEventListener('load', () => {
-      console.log('message:',xhr.response.message);
+      // console.log('message:',xhr.response.message);
       if (xhr.status === 200) {
         this.setState({
           secretData: xhr.response.message,
@@ -225,10 +225,10 @@ class DashboardPage extends React.Component {
                     open={this.state.modalOpen}
                     onRequestClose={this.handleModalClose.bind(this)}
                   >
-                    <p>all numbers here are in terms of minutes according to our calculation algorithm.</p>
-                    <p>we cannot sort the tables yet, this is a limitation of the table element we are using</p>
-                    <p>our data only begins from july 2016.</p>
-                    <p>let shawn know if there are any bugs found</p>
+                    <p>all numbers here are in terms of minutes according to our devs' calculation algorithm. I have no part in that.</p>
+                    <p>no, we cannot sort the tables yet, this is a limitation of the table element we are using.</p>
+                    <p>our data only begins from july 2016. so the "first 1wk/2wk/1mth" is calculated from july 2016 for those who have been with us before then.</p>
+                    <p>let shawn know if there are any UI bugs found.</p>
                   </Dialog>
               </div>
               <br />
@@ -246,7 +246,6 @@ class DashboardPage extends React.Component {
                   </TableHeader>
                   <TableBody stripedRows deselectOnClickaway={false}>
                       {this.state.userdata.length < 1 ? "No Match Found" : this.state.userdata.map((x) => {
-                        console.log(x.customer_flag)
                         return (
                     <TableRow key={x.username}>
                         <TableRowColumn>{x.first_name} {x.last_name} <br /> {x.username} <br /> {x.email}</TableRowColumn>
