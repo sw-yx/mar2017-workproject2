@@ -28,11 +28,13 @@ app.use('/api', authCheckMiddleware);
 // routes
 const authRoutes = require('./server/routes/auth');
 const apiRoutes = require('./server/routes/api');
+const openapiRoutes = require('./server/routes/openapi');
 app.use('/auth', authRoutes);
 app.use('/api', apiRoutes);
+app.use('/openapi', openapiRoutes);
 
 
 // start the server
 app.listen(3000, () => {
-  console.log('Server is running on http://localhost:3000 or http://127.0.0.1:3000');
+  console.log('Server is now running on http://localhost:3000 or http://127.0.0.1:3000');
 });

@@ -1,0 +1,8 @@
+#use these instructions in your mongo terminal to upload the analytics data
+
+#within mongo
+use sentieoanalytics
+db.userdatas.drop()
+
+#outside mongo
+mongoimport -d sentieoanalytics -c userdatas --type csv --file sessiontiming-userdata.csv --headerline

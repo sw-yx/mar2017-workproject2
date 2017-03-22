@@ -3,11 +3,15 @@ const Userdata = require('mongoose').model('Userdata');
 
 const router = new express.Router();
 
+/**
+ * this is just testing for the open api
+ */
 router.get('/dashboard', (req, res) => {
+  // console.log('reached dashboard api')
   Userdata.find({},{username: true,_id: false},(err,users) => {
     res.status(200).json({
       message: "all users",
-      users: users.filter(x => x != "")
+      users: users.map((x) => {return x.username === "" ? x.username : null})
     })
   })
   // res.status(200).json({
@@ -15,15 +19,14 @@ router.get('/dashboard', (req, res) => {
   // });
 });
 
-router.get('/userdata/:searchterm', (req, res) => {
-  // console.log('req',req);
-  Userdata.find({lookupkey: { $regex : new RegExp(req.params.searchterm, "i") }} , (err,user) => {
+router.get('/userdata', (req, res) => {
+  // console.log('reached api')
+  Userdata.find({lookupkey: { $regex : new RegExp("Connor", "i") }} , (err,user) => {
+    console.log('got result', user)
     if (err) res.status(400).json({message:"fail"})
-    // console.log(req.params.searchterm, user);
-    const ts = user.length>0 ? user[0]._id.getTimestamp() : 'error in retriving timestamp';
     res.status(200).json({
-      message: "last modified: " + ts,
-      userdata: user
+      message: "Last Updated: " + user[0]._id.getTimestamp(),
+      user: user
     });
   })
 });

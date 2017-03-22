@@ -4,7 +4,7 @@ import { Card, CardTitle } from 'material-ui/Card';
 
 const HomePage = () => (
   <Card className="container">
-    <CardTitle title="React Application" subtitle="This is the home page." />
+    <CardTitle title="Welcome to Swyx Analytics" subtitle="You must now login to see data." />
   </Card>
 );
 

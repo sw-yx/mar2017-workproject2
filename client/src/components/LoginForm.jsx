@@ -44,7 +44,7 @@ const LoginForm = ({
         <RaisedButton type="submit" label="Log in" primary />
       </div>
 
-      <CardText>Don't have an account? <Link to={'/signup'}>Create one</Link>.</CardText>
+      <CardText>Need a login? Ask an admin.</CardText>
     </form>
   </Card>
 );
@@ -58,3 +58,4 @@ LoginForm.propTypes = {
 };
 
 export default LoginForm;
+// <CardText>Don't have an account? <Link to={'/signup'}>Create one</Link>.</CardText>
