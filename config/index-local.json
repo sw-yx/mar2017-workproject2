@@ -1,4 +1,0 @@
-{
-  "dbUri": "mongodb://localhost/sentieoanalytics",
-  "jwtSecret": "a secret phrase!!"
-}

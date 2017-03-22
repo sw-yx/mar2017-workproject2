@@ -20136,13 +20136,29 @@ var _react2 = _interopRequireDefault(_react);
 
 var _Card = __webpack_require__(78);
 
+var _reactRouter = __webpack_require__(70);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var HomePage = function HomePage() {
   return _react2.default.createElement(
     _Card.Card,
     { className: 'container' },
-    _react2.default.createElement(_Card.CardTitle, { title: 'Welcome to Swyx Analytics', subtitle: 'You must now login to see data.' })
+    _react2.default.createElement(_Card.CardTitle, { title: 'Welcome to Swyx Analytics', subtitle: 'You must now login to see data.' }),
+    _react2.default.createElement(
+      _reactRouter.Link,
+      { to: '/login' },
+      _react2.default.createElement(
+        'h1',
+        null,
+        'Log in'
+      )
+    ),
+    _react2.default.createElement(
+      'h1',
+      null,
+      ' __ '
+    )
   );
 };
 
