@@ -20474,7 +20474,7 @@ var DashboardPage = function (_React$Component) {
       xhr.setRequestHeader('Authorization', 'bearer ' + _Auth2.default.getToken());
       xhr.responseType = 'json';
       xhr.addEventListener('load', function () {
-        console.log('message:', xhr.response.message);
+        // console.log('message:',xhr.response.message);
         if (xhr.status === 200) {
           _this2.setState({
             secretData: xhr.response.message,
@@ -20679,22 +20679,22 @@ var DashboardPage = function (_React$Component) {
             _react2.default.createElement(
               'p',
               null,
-              'all numbers here are in terms of minutes according to our calculation algorithm.'
+              'all numbers here are in terms of minutes according to our devs\' calculation algorithm. I have no part in that.'
             ),
             _react2.default.createElement(
               'p',
               null,
-              'we cannot sort the tables yet, this is a limitation of the table element we are using'
+              'no, we cannot sort the tables yet, this is a limitation of the table element we are using.'
             ),
             _react2.default.createElement(
               'p',
               null,
-              'our data only begins from july 2016.'
+              'our data only begins from july 2016. so the "first 1wk/2wk/1mth" is calculated from july 2016 for those who have been with us before then.'
             ),
             _react2.default.createElement(
               'p',
               null,
-              'let shawn know if there are any bugs found'
+              'let shawn know if there are any UI bugs found.'
             )
           )
         ),
@@ -20754,7 +20754,6 @@ var DashboardPage = function (_React$Component) {
             _Table.TableBody,
             { stripedRows: true, deselectOnClickaway: false },
             this.state.userdata.length < 1 ? "No Match Found" : this.state.userdata.map(function (x) {
-              console.log(x.customer_flag);
               return _react2.default.createElement(
                 _Table.TableRow,
                 { key: x.username },
